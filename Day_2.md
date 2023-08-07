@@ -2,9 +2,17 @@
 # Day 2: JavaScript: From First Steps to Professional Course By FrontEnd Master
 
 ## Lesson Summary
+### 1) Values & Data Types 
+Values-> chunks of information we want to work with
+that information (data) can be of different types
 
+typeof-> tells you the type of a value
 
+JS has two kinds of data:
+1. Primitive types (e.g. strings, numbers)
+2. Objects (e.g. document )
 
+Primitive data types [string , number, boolean, undefined, null ]
 ## Coding Exercises
 
 ### 1) [Compound Assignment With Augmented Multiplication](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-multiplication)
