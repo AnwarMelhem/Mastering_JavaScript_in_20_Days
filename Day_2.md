@@ -34,6 +34,24 @@ startsWith() ->Does this string start with some other string
 + -> Connecting strings together
 toLowerCase()-> converet char to small char
 
+### 2) Operator
+Arithmetic operators
++ add
+- subtract
+* multiply
+/ divide
+
+Comparison operators
+> greater than
+< less than
+>= greater than or equal to
+<= less than or equal to
+
+Equality operators
+=== strict equal 
+== loosey-goosey equal
+!== strict does not equal
+!= loosey-goosey does not equal
 
 ## Coding Exercises
 ### QUESTION #1
