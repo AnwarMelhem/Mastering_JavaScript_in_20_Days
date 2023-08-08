@@ -26,24 +26,43 @@ Array - a special type of object used to represent an ordered list of values, wi
 ************************************************************************************
 ## Mutability 
 mutable vs. immutable
-"Mutable" data can be edited (e.g. Arrays)
-"Immutable" data always stays the same (e.g. strings & other primitives)
+->"Mutable" data can be edited (e.g. Arrays)
+->"Immutable" data always stays the same (e.g. strings & other primitives)
+
+Some actions "mutate" an array (e.g. oldArray.push(newValue))->aka change the array in-place
+
+Other actions do not mutate the original array, but instead create a new copy (e.g. oldArray.concat(otherArray))
+************************************************************************************
+## Object
+The Object type represents one of JavaScript's data types. It is used to store various keyed collections and more complex entities.
+
+In JavaScript objects we can access, add, change, and remove members by using either dot or bracket notation.
+dot like js.name->Getting property values
+
+JavaScript Objects are Mutable
+Objects are mutable: They are addressed by reference, not by value.
+We call function-properties "methods" on objects
 
 
+this-> in a method lets us reference other properties on the object
+
+-> A method is a function associated with an object, or, put differently, a method is a property of an object that is a function. Methods are defined the way normal functions are defined, except that they have to be assigned as the property of an object. 
+
+*************************************************************************************
 ## Coding Exercises
 
-### 1) [Compound Assignment With Augmented Multiplication](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-multiplication)
+### 1) [Copy Array Items Using slice()](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/copy-array-items-using-slice)
 
 #### My Solution
 
-
 ```javascript
-let a = 5;
-let b = 12;
-let c = 4.6;
-a *= 5;
-b *= 3 ;
-c *=10;
+function forecast(arr) {
+  let Array1=arr.slice(2,4)
+  
+  return Array1;
+}
+
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
 
 ```
 *************************************************************************************************************
@@ -53,82 +72,78 @@ c *=10;
 
 #### My Solution
 
-
 ```javascript
-let myStr="This is the first sentence. ";
-myStr+= "This is the second sentence.";
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence=['learning', ...fragment, 'is', 'fun']
+  return sentence;
+}
+
+console.log(spreadOut());
 ```
 *************************************************************************************************************
 ## Coding Exercises
 
-### 3) [Use Dot Notation to Access the Properties of an Object](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/object-oriented-programming/use-dot-notation-to-access-the-properties-of-an-object)
+### 3) [Profile Lookup](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup)
 
 #### My Solution
-
-
 ```javascript
-let dog = {
-  name: "Spot",
-  numLegs: 4
-};
-console.log(dog.name);
-console.log(dog.numLegs);
+function lookUpProfile(name, prop){
+  for (var i = 0; i < contacts.length; i++) {
+    if(contacts[i].firstName === name) {
+      return contacts[i][prop] || "No such property";
+    }
+  }
+  return "No such contact";
+}
+
+lookUpProfile("Akira", "likes");
 ```
-it is a programming language of the web , created in 1995 , we can run javascript in prowser we can also run javascript on server using project called node.js
-### Where Js write?
-1. The browser's JS console
-2. Local text file in editor, e.g. TextEdit, VS Code
-3. Online playground e.g. CodePen, CodeSandbox
-
-### The DOM is -> Document Object Model
-1.Finding HTML Elements:
-- document.getElementById(id)->Find an element by element id
-- document.getElementsByTagName(name)->Find elements by tag name
-- document.getElementsByClassName(name)->Find elements by class name
-- document.querySelectorAll->find all HTML elements that match a specified CSS selector
-
-
-## Coding Exercises
-
-### 1) [Compound Assignment With Augmented Multiplication](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-multiplication)
+*************************************************************************************************************
+### 4) [Write Reusable JavaScript with Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/write-reusable-javascript-with-functions)
 
 #### My Solution
-
-
 ```javascript
-let a = 5;
-let b = 12;
-let c = 4.6;
-a *= 5;
-b *= 3 ;
-c *=10;
+function reusableFunction() {
+  console.log("Hi World");
+}
+reusableFunction();
 
 ```
 *************************************************************************************************************
 ## Coding Exercises
 
-### 2) [Concatenating Strings with the Plus Equals Operator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/concatenating-strings-with-the-plus-equals-operator)
+### 5) [Understanding Undefined Value returned from a Function](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-undefined-value-returned-from-a-functionr)
 
 #### My Solution
 
 
 ```javascript
-let myStr="This is the first sentence. ";
-myStr+= "This is the second sentence.";
+
+let sum = 0;
+
+function addThree() {
+  sum = sum + 3;
+}
+function addFive() {
+  sum = sum + 5;
+}
+
+addThree();
+addFive();
 ```
 *************************************************************************************************************
 ## Coding Exercises
 
-### 3) [Use Dot Notation to Access the Properties of an Object](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/object-oriented-programming/use-dot-notation-to-access-the-properties-of-an-object)
+### 6) [Return a Value from a Function with Return](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/return-a-value-from-a-function-with-return)
 
 #### My Solution
 
 
 ```javascript
-let dog = {
-  name: "Spot",
-  numLegs: 4
-};
-console.log(dog.name);
-console.log(dog.numLegs);
+function timesFive(num) {
+  return num * 5;
+}
+
+const answer = timesFive(5);
 ```
