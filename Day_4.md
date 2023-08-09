@@ -132,8 +132,8 @@ function myOutfit() {
 myOutfit();
 ```
 *************************************************************************************************************
+## Coding Exercises
 ### 4) [Stand in Line](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/stand-in-line)
-
 #### My Solution
 ```javascript
 function nextInLine(arr, item) {
