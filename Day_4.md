@@ -70,11 +70,39 @@ A handler function that JS calls when that event is fired on this element
 
 JS passes an event object to the handler function with information about the event
 "click", "dblclick","mouseover,"mouseout"-> type of event we can handle
+*********************************************************************************************************************
+## Coding Exercises
+### 1) [Global Scope and Functionsr](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-scope-and-functions)
 
+#### My Solution
 
+```javascript
+
+let myGlobal=10;
+
+function fun1() {
+  oopsGlobal=5
+
+}
+
+function fun2() {
+  let output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
+console.log(spreadOut());
+```
+*************************************************************************************************************
+
+***********************************************************************************************************************
 ## Coding Exercises
 
-### 1) [Local Scope and Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/local-scope-and-functions)
+### 2) [Local Scope and Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/local-scope-and-functions)
 
 #### My Solution
 
@@ -91,20 +119,7 @@ console.log('outside myLocalScope', myVar);
 *************************************************************************************************************
 ## Coding Exercises
 
-### 2) [Concatenating Strings with the Plus Equals Operator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/concatenating-strings-with-the-plus-equals-operator)
 
-#### My Solution
-
-```javascript
-function spreadOut() {
-  let fragment = ['to', 'code'];
-  let sentence=['learning', ...fragment, 'is', 'fun']
-  return sentence;
-}
-
-console.log(spreadOut());
-```
-*************************************************************************************************************
 ## Coding Exercises
 
 ### 3) [Profile Lookup](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup)
