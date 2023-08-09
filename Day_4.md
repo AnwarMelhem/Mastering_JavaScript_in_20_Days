@@ -36,11 +36,20 @@ Global scope: The default scope for all code running in script mode.
 Module scope: The scope for code running in module mode.
 Function scope: The scope created with a function.
 
+In addition, variables declared with let or const can belong to an additional scope:
+Block scope: The scope created with a pair of curly braces (a block).
+
 Within each scope, you can access variables declared in a wider scope (e.g. global scope)
 But not those declared in a narrower scope (e.g. function scope)
 
+Variables declared with let can be modified from within a narrower scope
 
+var->Variables declared with var are in the function scope
+let->Variables declared as let are in the block scope.
+const->Variables declared as const are in the block scope.
 
+Reassign the value:
+var-> allowed, let-> allowed, cost-> not allowed 
 
 *************************************************************************************
 ## Coding Exercises
