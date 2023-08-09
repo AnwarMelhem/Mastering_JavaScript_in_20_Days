@@ -99,7 +99,6 @@ console.log(spreadOut());
 ```
 *************************************************************************************************************
 
-***********************************************************************************************************************
 ## Coding Exercises
 
 ### 2) [Local Scope and Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/local-scope-and-functions)
@@ -119,69 +118,40 @@ console.log('outside myLocalScope', myVar);
 *************************************************************************************************************
 ## Coding Exercises
 
-
-## Coding Exercises
-
-### 3) [Profile Lookup](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup)
+### 3) [Global vs. Local Scope in Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-vs--local-scope-in-functions)
 
 #### My Solution
 ```javascript
-function lookUpProfile(name, prop){
-  for (var i = 0; i < contacts.length; i++) {
-    if(contacts[i].firstName === name) {
-      return contacts[i][prop] || "No such property";
-    }
-  }
-  return "No such contact";
+const outerWear = "T-Shirt";
+
+function myOutfit() {
+  const outerWear = "sweater";
+  return outerWear;
 }
 
-lookUpProfile("Akira", "likes");
+myOutfit();
 ```
 *************************************************************************************************************
-### 4) [Write Reusable JavaScript with Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/write-reusable-javascript-with-functions)
+### 4) [Stand in Line](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/stand-in-line)
 
 #### My Solution
 ```javascript
-function reusableFunction() {
-  console.log("Hi World");
+function nextInLine(arr, item) {
+  arr.push(item);
+  item=arr.shift()
+  
+  return item;
+  
 }
-reusableFunction();
+
+// Setup
+let testArr = [1, 2, 3, 4, 5];
+
+// Display code
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
 
 ```
 *************************************************************************************************************
-## Coding Exercises
 
-### 5) [Understanding Undefined Value returned from a Function](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-undefined-value-returned-from-a-functionr)
-
-#### My Solution
-
-
-```javascript
-
-let sum = 0;
-
-function addThree() {
-  sum = sum + 3;
-}
-function addFive() {
-  sum = sum + 5;
-}
-
-addThree();
-addFive();
-```
-*************************************************************************************************************
-## Coding Exercises
-
-### 6) [Return a Value from a Function with Return](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/return-a-value-from-a-function-with-return)
-
-#### My Solution
-
-
-```javascript
-function timesFive(num) {
-  return num * 5;
-}
-
-const answer = timesFive(5);
-```
