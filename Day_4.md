@@ -26,6 +26,19 @@ For multiple parameters, parentheses are required
 
 If we need to do more than just return a value,
 we can use curly braces for a "normal" function body
+************************************************************************************
+### Scope 
+The scope is the current context of execution in which values and expressions are "visible" or can be referenced. If a variable or expression is not in the current scope, it will not be available for use. Scopes can also be layered in a hierarchy, so that child scopes have access to parent scopes, but not vice versa.
+
+JavaScript has the following kinds of scopes:
+
+Global scope: The default scope for all code running in script mode.
+Module scope: The scope for code running in module mode.
+Function scope: The scope created with a function.
+
+Within each scope, you can access variables declared in a wider scope (e.g. global scope)
+But not those declared in a narrower scope (e.g. function scope)
+
 
 
 
