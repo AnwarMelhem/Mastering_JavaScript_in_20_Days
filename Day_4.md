@@ -52,20 +52,40 @@ Reassign the value:
 var-> allowed, let-> allowed, cost-> not allowed 
 
 *************************************************************************************
+### Events & Handler 
+Events make our web page interactive!
+The web browser fires events when certain things happen on the page
+For example, when the user clicks somewhere on the page, a click event is fired
+
+We can detect events with JS using an event listener
+The .addEventListener() method lets us listen for events on a DOM element
+ex:
+document.addEventListener("click", () => {
+    console.log("clicked")
+});
+
+.addEventListener() takes 2 parameters:
+The name of the event to listen to (e.g. "click")
+A handler function that JS calls when that event is fired on this element
+
+JS passes an event object to the handler function with information about the event
+"click", "dblclick","mouseover,"mouseout"-> type of event we can handle
+
+
 ## Coding Exercises
 
-### 1) [Copy Array Items Using slice()](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/copy-array-items-using-slice)
+### 1) [Local Scope and Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/local-scope-and-functions)
 
 #### My Solution
 
 ```javascript
-function forecast(arr) {
-  let Array1=arr.slice(2,4)
-  
-  return Array1;
+function myLocalScope() {
+  let myVar;
+  console.log('inside myLocalScope', myVar);
 }
+myLocalScope();
 
-console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+console.log('outside myLocalScope', myVar);
 
 ```
 *************************************************************************************************************
