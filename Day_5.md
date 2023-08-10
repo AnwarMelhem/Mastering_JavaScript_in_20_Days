@@ -38,6 +38,21 @@ null & undefined inside condition is fals
 
 ->We can use for...of to iterate over characters in a string or items in an array-> because strings & arrays are "iterables"
 
+The While Loop
+The while loop loops through a block of code as long as a specified condition is true.
+
+The Do While Loop
+The do while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
+
+### map & filter
+-> The map & filter methods also let us process all the items in an array
+-> map calls a function on each item in an array to create a new array
+-> filter calls a true/false function on each item and creates a new array with only the items where the function returns true
+
+### Spread (...)
+Spread (...) ->It lets us take all the items in an array and spread 'em around
+We can use it to put all the items from one array inside another array
+We can also use it to pass all the items from an array as arguments to a function or method
 
 
 *********************************************************************************************************************
