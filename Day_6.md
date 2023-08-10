@@ -1,75 +1,30 @@
 
-# Day 4: JavaScript: From First Steps to Professional Course By FrontEnd Master
+# Day 6: JavaScript: From First Steps to Professional Course By FrontEnd Master
 
 ## Lesson Summary
-### Function 
+### API & Fetch
 
-A JavaScript function is a block of code designed to perform a particular task.
-A JavaScript function is executed when "something" invokes it (calls it).
+URLs point to resources on the web
+APIs provide URLs that point at data we care about
+fetch() lets us use JS to load data from APIs
 
+### Promises
+->Promises provide a more structured approach to handling asynchronous operations. A promise represents the eventual completion or failure of an asynchronous operation and allows you to attach callbacks to handle the resul
 
-values are things
-variables point to things
-functions do things
+->JS writes us an "IOU" for the data value it doesn't have yet
+aka a Promise of a value
 
-parameters are the inputs a function expects
-arguments are the actual values the function is called with
+Promises can be in 3 possible states:
+pending: still waiting for the value, hang tight
+fulfilled (aka "resolved"): finally got the value, all done
+rejected: sorry couldn't get the value, all done
+It takes time for Promises to resolve, so they are "asynchronous"
 
-Parameters should be named like variables, and behave like variables within the function body
+### await
+await lets us tell JS to stop and wait for an asynchronous operation to finish
 
-Return values-> A return statement specifies the function's output value
+The await operator is used to wait for a Promise and get its fulfillment value. It can only be used inside an async function or at the top level of a module
 
-Arrow function-> The => "fat arrow" lets us create an unnamed function without much code
-Arrow functions are great when we just want to return a value
-For one-parameter functions, parentheses are optional
-For multiple parameters, parentheses are required
-
-If we need to do more than just return a value,
-we can use curly braces for a "normal" function body
-************************************************************************************
-### Scope 
-The scope is the current context of execution in which values and expressions are "visible" or can be referenced. If a variable or expression is not in the current scope, it will not be available for use. Scopes can also be layered in a hierarchy, so that child scopes have access to parent scopes, but not vice versa.
-
-JavaScript has the following kinds of scopes:
-
-Global scope: The default scope for all code running in script mode.
-Module scope: The scope for code running in module mode.
-Function scope: The scope created with a function.
-
-In addition, variables declared with let or const can belong to an additional scope:
-Block scope: The scope created with a pair of curly braces (a block).
-
-Within each scope, you can access variables declared in a wider scope (e.g. global scope)
-But not those declared in a narrower scope (e.g. function scope)
-
-Variables declared with let can be modified from within a narrower scope
-
-var->Variables declared with var are in the function scope
-let->Variables declared as let are in the block scope.
-const->Variables declared as const are in the block scope.
-
-Reassign the value:
-var-> allowed, let-> allowed, cost-> not allowed 
-
-*************************************************************************************
-### Events & Handler 
-Events make our web page interactive!
-The web browser fires events when certain things happen on the page
-For example, when the user clicks somewhere on the page, a click event is fired
-
-We can detect events with JS using an event listener
-The .addEventListener() method lets us listen for events on a DOM element
-ex:
-document.addEventListener("click", () => {
-    console.log("clicked")
-});
-
-.addEventListener() takes 2 parameters:
-The name of the event to listen to (e.g. "click")
-A handler function that JS calls when that event is fired on this element
-
-JS passes an event object to the handler function with information about the event
-"click", "dblclick","mouseover,"mouseout"-> type of event we can handle
 *********************************************************************************************************************
 ## Coding Exercises
 ### 1) [Global Scope and Functionsr](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-scope-and-functions)
