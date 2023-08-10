@@ -22,21 +22,21 @@ null & undefined inside condition is fals
 ->Logical "and" (&&) requires both values to be truthy
 ->Logical "or" (||) requires only one value to be truthy
 
-Conditional ternary operator
-JS also has a "shortcut" operator for writing quick conditionals it needs 3 values to work:
-condition ? valueIfTrue : valueIfFalse;
+->Conditional ternary operator
+->JS also has a "shortcut" operator for writing quick conditionals it needs 3 values to work:
+->condition ? valueIfTrue : valueIfFalse;
 
 ### Loops
-Loops let us run the same chunk of code multiple times->this is called iteration
+->Loops let us run the same chunk of code multiple times->this is called iteration
 
-for loops require us to:
-declare & initialize a loop counter
-give a condition for the loop to keep running
-describe how to change (usually increment) the counter each time
+->for loops require us to:
+->declare & initialize a loop counter
+->give a condition for the loop to keep running
+->describe how to change (usually increment) the counter each time
 
-for ... of loops let us more easily iterate over items in a collection
+->for ... of loops let us more easily iterate over items in a collection
 
-We can use for...of to iterate over characters in a string or items in an array-> because strings & arrays are "iterables"
+->We can use for...of to iterate over characters in a string or items in an array-> because strings & arrays are "iterables"
 
 
 
