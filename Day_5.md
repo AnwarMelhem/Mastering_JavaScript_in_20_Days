@@ -1,5 +1,5 @@
 
-# Day 4: JavaScript: From First Steps to Professional Course By FrontEnd Master
+# Day 5: JavaScript: From First Steps to Professional Course By FrontEnd Master
 
 ## Lesson Summary
 ### Conditionals 
@@ -54,6 +54,7 @@ Spread (...) ->It lets us take all the items in an array and spread 'em around
 We can use it to put all the items from one array inside another array
 We can also use it to pass all the items from an array as arguments to a function or method
 
+### (A)synchronous code
 
 *********************************************************************************************************************
 ## Coding Exercises
