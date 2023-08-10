@@ -66,30 +66,17 @@ Asynchronous programming in JavaScript allows you to perform non-blocking operat
 
 *********************************************************************************************************************
 ## Coding Exercises
-### 1) [Global Scope and Functionsr](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-scope-and-functions)
+### 1) [Use Multiple Conditional (Ternary) Operators](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/use-multiple-conditional-ternary-operators)
 
 #### My Solution
 
 ```javascript
-
-let myGlobal=10;
-
-function fun1() {
-  oopsGlobal=5
-
+function checkSign(num) {
+ return num > 0 ? "positive": num<0 ? "negative": "zero"
 }
 
-function fun2() {
-  let output = "";
-  if (typeof myGlobal != "undefined") {
-    output += "myGlobal: " + myGlobal;
-  }
-  if (typeof oopsGlobal != "undefined") {
-    output += " oopsGlobal: " + oopsGlobal;
-  }
-  console.log(output);
-}
-console.log(spreadOut());
+checkSign(10);
+
 ```
 *************************************************************************************************************
 
