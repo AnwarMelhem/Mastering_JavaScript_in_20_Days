@@ -55,6 +55,14 @@ We can use it to put all the items from one array inside another array
 We can also use it to pass all the items from an array as arguments to a function or method
 
 ### (A)synchronous code
+JS can usually run straight through our program "synchronously"
+JS can only do one task at a time ("single-threaded")
+
+## Synchronous Programming
+Synchronous programming is where the computer will complete one task before moving on to the next. This makes it easy to understand and predict what the computer will do at any given time.
+
+## Asynchronous programming
+Asynchronous programming in JavaScript allows you to perform non-blocking operations and handle tasks that may take some time to complete, such as fetching data from a server or reading a file. It ensures that your program doesn't get blocked while waiting for these operations to finish. There are several ways to achieve asynchronous programming in JavaScript, including callback functions, promises, and the newer async/await syntax.
 
 *********************************************************************************************************************
 ## Coding Exercises
