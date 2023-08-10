@@ -17,10 +17,10 @@ opject like array inside condition is truthy
 null & undefined inside condition is fals
 
 ### Boolean (logical) operators
-The ! operator negates a boolean (gives its opposite)
-Logical operators let us make two boolean values become one
-Logical "and" (&&) requires both values to be truthy
-Logical "or" (||) requires only one value to be truthy
+->The ! operator negates a boolean (gives its opposite)
+->Logical operators let us make two boolean values become one
+->Logical "and" (&&) requires both values to be truthy
+->Logical "or" (||) requires only one value to be truthy
 
 Conditional ternary operator
 JS also has a "shortcut" operator for writing quick conditionals it needs 3 values to work:
