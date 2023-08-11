@@ -25,6 +25,28 @@ await lets us tell JS to stop and wait for an asynchronous operation to finish
 
 The await operator is used to wait for a Promise and get its fulfillment value. It can only be used inside an async function or at the top level of a module
 
+### Destructuring
+Destructuring assignment provides a way to extract values from arrays or objects and assign them to variables
+Destructuring is a fancy way of declaring multiple variables at once
+We can also destructure Arrays, assigning variables for their items
+We can ignore the values in the array we don't need
+We can use commas to "skip" values
+We can use ... to collect remaining values
+
+### async function
+The async function declaration creates a binding of a new async function to a given name. The await keyword is permitted within the function body, enabling asynchronous, promise-based behavior to be written in a cleaner style and avoiding the need to explicitly configure promise chains
+
+### Modules
+Modules provide a way to organize code into reusable, independent pieces in JavaScript. They can be thought of as a file that exports certain values (variables, functions, classes, etc.) and can be imported into other files
+
+Modules let us split big codebases across multiple files
+JS modules work differently from JS scripts
+One difference is that we can't use await outside of a function in a script
+Another difference is that modules create their own scope
+
+### import && export
+export lets us expose variables from our module's scope to the outside world
+import lets us use an exposed variable from another module
 *********************************************************************************************************************
 ## Coding Exercises
 ### 1) [Global Scope and Functionsr](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-scope-and-functions)
