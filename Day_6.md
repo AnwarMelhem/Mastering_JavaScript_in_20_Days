@@ -47,6 +47,22 @@ Modules provide a way to organize code into reusable, independent pieces in Java
 ### import && export
 - export lets us expose variables from our module's scope to the outside world
 - import lets us use an exposed variable from another module
+
+  ### Debugging
+  console.log() (or .warn() or .error()) is one way to understand what's happening when your program runs
+  can also use the browser's debugger to pause JS and inspect what's happening
+  The debugger statement creates a breakpoint where JS will pause and let you look around
+  Different browsers' debuggers work differently
+- Firefox
+- Chrome
+- Safari
+
+  ### try & catch Error Handling
+  # Error Handling
+Error handling is an important aspect of JavaScript programming as it allows you to gracefully handle and respond to unexpected errors and exceptions that may occur during the execution of your code. Here are some examples of error handling techniques in JavaScript
+
+# Try...Catch Statement
+The try...catch statement is used to catch and handle exceptions that may occur within a block of code.
 *********************************************************************************************************************
 ## Coding Exercises
 ### 1) [Global Scope and Functionsr](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-scope-and-functions)
