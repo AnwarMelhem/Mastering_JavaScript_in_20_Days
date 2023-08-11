@@ -65,86 +65,13 @@ Error handling is an important aspect of JavaScript programming as it allows you
 The try...catch statement is used to catch and handle exceptions that may occur within a block of code.
 *********************************************************************************************************************
 ## Coding Exercises
-### 1) [Global Scope and Functionsr](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-scope-and-functions)
+### 1) [rick&Morty Character List](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week1%20-%20javascript-from-first-steps-to-professional/day%206/task.md)
 
 #### My Solution
+https://github.com/AnwarMelhem/Rick_Morty_Character_List
+#### My Vedio 
+https://drive.google.com/file/d/1whKhujzWYzV8qhF5ndCJ5SBjLWzFc0Bn/view?usp=sharing
 
-```javascript
 
-let myGlobal=10;
 
-function fun1() {
-  oopsGlobal=5
-
-}
-
-function fun2() {
-  let output = "";
-  if (typeof myGlobal != "undefined") {
-    output += "myGlobal: " + myGlobal;
-  }
-  if (typeof oopsGlobal != "undefined") {
-    output += " oopsGlobal: " + oopsGlobal;
-  }
-  console.log(output);
-}
-console.log(spreadOut());
-```
-*************************************************************************************************************
-
-## Coding Exercises
-
-### 2) [Local Scope and Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/local-scope-and-functions)
-
-#### My Solution
-
-```javascript
-function myLocalScope() {
-  let myVar;
-  console.log('inside myLocalScope', myVar);
-}
-myLocalScope();
-
-console.log('outside myLocalScope', myVar);
-
-```
-*************************************************************************************************************
-## Coding Exercises
-
-### 3) [Global vs. Local Scope in Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-vs--local-scope-in-functions)
-
-#### My Solution
-```javascript
-const outerWear = "T-Shirt";
-
-function myOutfit() {
-  const outerWear = "sweater";
-  return outerWear;
-}
-
-myOutfit();
-```
-*************************************************************************************************************
-## Coding Exercises
-### 4) [Stand in Line](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/stand-in-line)
-#### My Solution
-```javascript
-function nextInLine(arr, item) {
-  arr.push(item);
-  item=arr.shift()
-  
-  return item;
-  
-}
-
-// Setup
-let testArr = [1, 2, 3, 4, 5];
-
-// Display code
-console.log("Before: " + JSON.stringify(testArr));
-console.log(nextInLine(testArr, 6));
-console.log("After: " + JSON.stringify(testArr));
-
-```
-*************************************************************************************************************
 
