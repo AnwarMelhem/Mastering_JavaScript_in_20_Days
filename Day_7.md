@@ -53,9 +53,6 @@ An arrow function expression is a compact alternative to a traditional function 
 
 *********************************************************************************************************************
 ## Coding Exercises
-### 1) [rick&Morty Character List](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week1%20-%20javascript-from-first-steps-to-professional/day%206/task.md)
+### 1) [Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week1%20-%20javascript-from-first-steps-to-professional/day%206/task.md)
 
-#### My Solution
-https://github.com/AnwarMelhem/Rick_Morty_Character_List
-#### My Vedio 
-https://drive.google.com/file/d/1whKhujzWYzV8qhF5ndCJ5SBjLWzFc0Bn/view?usp=sharing
+
