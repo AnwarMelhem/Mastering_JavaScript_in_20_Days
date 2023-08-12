@@ -53,6 +53,17 @@ An arrow function expression is a compact alternative to a traditional function 
 
 *********************************************************************************************************************
 ## Coding Exercises
-### 1) [Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week1%20-%20javascript-from-first-steps-to-professional/day%206/task.md)
+### 1) [Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem)
+```javascript
+const squareList = arr => {
+  const arr1= arr.filter(num => num > 0 && num % parseInt(num) === 0)
+          .map(num => Math.pow(num, 2));
+  return arr1
+
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);
+```
 
 
