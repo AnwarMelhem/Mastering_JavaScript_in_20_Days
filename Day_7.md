@@ -66,4 +66,22 @@ const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
 console.log(squaredIntegers);
 ```
 
+*********************************************************************************************************************
+## Coding Exercises
+### 2) [Apply Functional Programming to Convert Strings to URL Slugs](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/apply-functional-programming-to-convert-strings-to-url-slugs)
+```javascript
+function urlSlug(title) {
+return title
+    .split(" ")
+    .filter(substr => substr !== "")
+    .join("-")
+    .toLowerCase();
+}
+urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone");
+```
+*********************************************************************************************************************
+### 3) [Question 1: Functions and Callbacks](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%201/tasks.md)
+
+
+
 
