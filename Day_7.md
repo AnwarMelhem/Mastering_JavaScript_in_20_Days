@@ -81,7 +81,23 @@ urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone");
 ```
 *********************************************************************************************************************
 ### 3) [Question 1: Functions and Callbacks](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%201/tasks.md)
-
+``` javascript
+async function mapAsync(array, instructions) {
+    const output = [];
+    for (let i = 0; i < array.length; i++) {
+    output.push(await instructions(array[i]));
+    }
+    return output;
+   }
+   async function multiplyBy2(input) { return input * 2; }
+   const result = mapAsync([1, 2, 3, 4, 5],  multiplyBy2)
+   .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
 
 
 
