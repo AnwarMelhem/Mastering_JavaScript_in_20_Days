@@ -13,9 +13,41 @@ Closures are powerful because they allow functions to retain access to the varia
 - Lexical scoping describes how the JavaScript engine uses the location of the variable in the code to determine where that variable is available.
 - A closure is a combination of a function and its ability to remember variables in the outer scope.
 
+## Functions with memories
+-the Functions get a new memory every run/invocation
+- When our functions get called, we create a live store of data (local
+memory/variable environment/state) for that function’s execution context.
+- When the function finishes executing, its local memory is deleted (except the
+returned value)
+
+## Calling a function in the same function call as it was defined
+```javascript
+function outer (){
+ let counter = 0;
+ function incrementCounter (){
+ counter ++;
+ }
+ incrementCounter();
+}
+outer();
+```
+## Calling a function outside of the function call in which it was defined
+```javascript
+function outer (){
+ let counter = 0;
+ function incrementCounter (){ counter ++; }
+ return incrementCounter;
+}
+const myNewFunction = outer();
+myNewFunction();
+myNewFunction();
+```
+
 *********************************************************************************************************************
 ## Coding Exercises
-### 1) [Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem)
+### 1) [Question 1:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
+Write a closure named createCounter that takes an initial value start and returns a function. The returned function, when invoked, should increment the counter by 1 and return the updated value.
+
 ```javascript
 const squareList = arr => {
   const arr1= arr.filter(num => num > 0 && num % parseInt(num) === 0)
@@ -27,39 +59,70 @@ const squareList = arr => {
 const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
 console.log(squaredIntegers);
 ```
+***********************************************************************************************
+### 2) [Question 2:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
+Write a closure named calculateAverage that takes an array of numbers, nums, and returns a function. The returned function, when invoked, should calculate and return the average of the numbers in the array.
 
-*********************************************************************************************************************
-## Coding Exercises
-### 2) [Apply Functional Programming to Convert Strings to URL Slugs](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/apply-functional-programming-to-convert-strings-to-url-slugs)
 ```javascript
-function urlSlug(title) {
-return title
-    .split(" ")
-    .filter(substr => substr !== "")
-    .join("-")
-    .toLowerCase();
-}
-urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone");
-```
-*********************************************************************************************************************
-### 3) [Question 1: Functions and Callbacks](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%201/tasks.md)
-``` javascript
-async function mapAsync(array, instructions) {
-    const output = [];
-    for (let i = 0; i < array.length; i++) {
-    output.push(await instructions(array[i]));
+function calculateAverage(ArrayOfNumber){
+   
+  function innerAverage (){ 
+    let sum =0
+    for(let i=0;i<ArrayOfNumber.length;i++){
+      sum=sum+ArrayOfNumber[i];
     }
-    return output;
+    let result=sum/ArrayOfNumber.length;
+    return result;
    }
-   async function multiplyBy2(input) { return input * 2; }
-   const result = mapAsync([1, 2, 3, 4, 5],  multiplyBy2)
-   .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+  return innerAverage;
+ }
+ const myNewFunction = calculateAverage([1,2,3,4,5,6,7,8,9,10]);
+ const result=myNewFunction();
+ console.log(result);
 ```
+************************************************************************************************
+### 3) [Question 3:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
+Write a closure named powerOf that takes a base number base and returns a function. The returned function, when invoked with an exponent exp, should calculate and return the result of base raised to the power of exp.
 
+```javascript
+function powerOf(baseNumber){
+   
+  function exponent (exp){ 
+    return Math.pow(baseNumber,exp)
+   }
+  return exponent;
+ }
+ const myNewFunction = powerOf(2);
+ const result=myNewFunction(5);
+ console.log(result);
+```
+***********************************************************************************************
+### 4) [Question 4:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
+Write a closure named compose that takes multiple functions as arguments and returns a new function. The returned function should apply the provided functions in reverse order, passing the result of each function as an argument to the next function.
+```javascript
+function add10(x) {
+  return x + 10;
+}
 
+function multiply2(x) {
+  return x * 2;
+}
+
+function subtract3(x) {
+  return x - 3;
+}
+
+function compose(...functions) {
+  return function(arg) {
+    for (let i = functions.length - 1; i >= 0; i--) {
+      arg = functions[i](arg);
+    }
+    return arg;
+  };
+}
+
+const composedFunction = compose(subtract3, multiply2, add10);
+console.log(composedFunction(10));
+```
+***********************************************************************************************
 
