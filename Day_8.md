@@ -1,5 +1,5 @@
 
-# Day 7: JavaScript: The Hard Parts, v2
+# Day 8: JavaScript: The Hard Parts, v2
 
 ## Clousers 
 In JavaScript, closures are an important concept that allows functions to access variables from their outer lexical environment even after the outer function has finished executing. 
