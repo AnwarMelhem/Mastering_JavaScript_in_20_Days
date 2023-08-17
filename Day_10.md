@@ -1,5 +1,5 @@
 
-# Day 9: JavaScript: The Hard Parts, v2
+# Day 10: JavaScript: The Hard Parts, v2
 ## Classes & Prototypes
 
 ### Objects
@@ -30,23 +30,8 @@ Prototype chaining allows objects to inherit properties and methods from other o
 The hasOwnProperty() method of Object instances returns a boolean indicating whether this object has the specified property as its own property (as opposed to inheriting it).
 *********************************************************************************************************************
 ## Coding Exercises
-### 1) [Question 1:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%203/tasks.md)
+### 1) [Coding Exercises](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%204/task.md)
 
-```javascript
-
-```
-***********************************************************************************************
-### 2) [Question 2:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
-
-```javascript
-
-```
-************************************************************************************************
-### 3) [Question 3:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%203/tasks.md)
-
-
-```javascript
-
-```
+26 exercises of the Object Oriented Programming section soluation in this link ->[Soluations](https://www.freecodecamp.org/AnwarMelhem)
 
 
