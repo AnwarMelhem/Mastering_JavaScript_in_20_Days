@@ -3,17 +3,17 @@
 
 ## Asynchronous JavaScript
 
-## JavaScript is:
+### JavaScript is:
 - Single threaded (one command runs at a time)
 - Synchronously executed (each line is run in order the code appears)
 
-## Synchronous Programming
+### Synchronous Programming
 Synchronous programming is where the computer will complete one task before moving on to the next. This makes it easy to understand and predict what the computer will do at any given time.
 
-## Asynchronous programming
+### Asynchronous programming
 Asynchronous programming in JavaScript allows you to perform non-blocking operations and handle tasks that may take some time to complete, such as fetching data from a server or reading a file. It ensures that your program doesn't get blocked while waiting for these operations to finish. There are several ways to achieve asynchronous programming in JavaScript, including callback functions, promises, and the newer async/await syntax.
 
-## setTimeout is a built in function - its first argument is the function to delay followed by ms to delay by
+### setTimeout is a built in function - its first argument is the function to delay followed by ms to delay by
 
 core JavaScript engine has 3 main parts:
 - Thread of execution
@@ -31,9 +31,9 @@ Hold promise-deferred functions in a microtask queue and
 callback function in a task queue (Callback queue) 
 when the Web Browser Feature (API) finishes add the function to the Call stack (i.e. run the function) when:
 - Call stack is empty & all global code run (Have the Event Loop check this condition)
-# Prioritize functions in the microtask queue over the Callback queue
+### Prioritize functions in the microtask queue over the Callback queue
 
-## Call stack
+### Call stack
 A call stack is a mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its place in a script that calls multiple functions — what function is currently being run and what functions are called from within that function, etc.
 
 When a script calls a function, the interpreter adds it to the call stack and then starts carrying out the function.
@@ -41,7 +41,7 @@ Any functions that are called by that function are added to the call stack furth
 When the current function is finished, the interpreter takes it off the stack and resumes execution where it left off in the last code listing.
 If the stack takes up more space than it was assigned, a "stack overflow" error is thrown.
 
-## Promise 
+### Promise 
 The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 
 A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
