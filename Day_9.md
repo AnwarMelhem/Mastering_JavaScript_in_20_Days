@@ -1,48 +1,50 @@
 
-# Day 8: JavaScript: The Hard Parts, v2
+# Day 9: JavaScript: The Hard Parts, v2
 
-## Clousers 
-In JavaScript, closures are an important concept that allows functions to access variables from their outer lexical environment even after the outer function has finished executing. 
+## Asynchronous JavaScript
 
-A closure is created when an inner function is returned from an outer function and still has access to its lexical scope, including the variables and parameters of the outer function.
+## JavaScript is:
+- Single threaded (one command runs at a time)
+- Synchronously executed (each line is run in order the code appears)
 
-A closure is a function that preserves the outer scope in its inner scope.
+## Synchronous Programming
+Synchronous programming is where the computer will complete one task before moving on to the next. This makes it easy to understand and predict what the computer will do at any given time.
 
-Closures are powerful because they allow functions to retain access to the variables they need, even when they are invoked outside their original lexical scope. This behavior enables advanced patterns and techniques in JavaScript programming.
+## Asynchronous programming
+Asynchronous programming in JavaScript allows you to perform non-blocking operations and handle tasks that may take some time to complete, such as fetching data from a server or reading a file. It ensures that your program doesn't get blocked while waiting for these operations to finish. There are several ways to achieve asynchronous programming in JavaScript, including callback functions, promises, and the newer async/await syntax.
 
-- Lexical scoping describes how the JavaScript engine uses the location of the variable in the code to determine where that variable is available.
-- A closure is a combination of a function and its ability to remember variables in the outer scope.
+## setTimeout is a built in function - its first argument is the function to delay followed by ms to delay by
 
-## Functions with memories
--the Functions get a new memory every run/invocation
-- When our functions get called, we create a live store of data (local
-memory/variable environment/state) for that function’s execution context.
-- When the function finishes executing, its local memory is deleted (except the
-returned value)
+core JavaScript engine has 3 main parts:
+- Thread of execution
+- Memory/variable environment
+- Call stack
+We need to add some new components:
+- Web Browser APIs/Node background APIs
+- Promises
+- Event loop, Callback/Task queue and micro task queue 
 
-## Calling a function in the same function call as it was defined
-```javascript
-function outer (){
- let counter = 0;
- function incrementCounter (){
- counter ++;
- }
- incrementCounter();
-}
-outer();
-```
-## Calling a function outside of the function call in which it was defined
-```javascript
-function outer (){
- let counter = 0;
- function incrementCounter (){ counter ++; }
- return incrementCounter;
-}
-const myNewFunction = outer();
-myNewFunction();
-myNewFunction();
-```
 
+## Promise 
+The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
+
+A Promise is in one of these states:
+- pending: initial state, neither fulfilled nor rejected.
+- fulfilled: meaning that the operation was completed successfully.
+- rejected: meaning that the operation failed.
+
+  ![image](https://github.com/AnwarMelhem/Mastering_JavaScript_in_20_Days/assets/97465642/9562a561-83bc-4a98-bd34-1af674ba8273)
+
+
+## Call stack
+A call stack is a mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its place in a script that calls multiple functions — what function is currently being run and what functions are called from within that function, etc.
+
+When a script calls a function, the interpreter adds it to the call stack and then starts carrying out the function.
+Any functions that are called by that function are added to the call stack further up, and run where their calls are reached.
+When the current function is finished, the interpreter takes it off the stack and resumes execution where it left off in the last code listing.
+If the stack takes up more space than it was assigned, a "stack overflow" error is thrown.
 *********************************************************************************************************************
 ## Coding Exercises
 ### 1) [Question 1:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
