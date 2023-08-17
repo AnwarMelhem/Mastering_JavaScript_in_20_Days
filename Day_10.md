@@ -29,7 +29,7 @@ Prototype chaining allows objects to inherit properties and methods from other o
 ## Object.prototype.hasOwnProperty()
 The hasOwnProperty() method of Object instances returns a boolean indicating whether this object has the specified property as its own property (as opposed to inheriting it).
 *********************************************************************************************************************
-## Coding Exercises
+
 ### 1) [Coding Exercises](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%204/task.md)
 
 26 exercises of the Object Oriented Programming section soluation in this link ->[Soluations](https://www.freecodecamp.org/AnwarMelhem)
