@@ -105,9 +105,62 @@ console.log(executeInSequenceWithCBs(asyncTasks,(result)=>{console.log(result,"a
 ***********************************************************************************************
 ### 2) [Question 2:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
 
+You are given a function called executeInParallelWithPromises, which takes an array of APIs (represented by objects).
 
+Your task is to write code that fetches the data of each API in parallel using promises. In Parallel means that the api which resolves first, returns its value first, regardless of the execution order.
+
+The output of the executeInParallelWithPromises function should be an array containing the results of each API's execution.
+
+Each result should be an object with three keys: apiName, apiUrl, and apiData..
 ```javascript
+const apis = [
+  {
+    apiName: "products", 
+    apiUrl: "https://dummyjson.com/products",
+  }, 
+  {
+    apiName: "users", 
+    apiUrl: "https://dummyjson.com/users",
+  }, 
+  {
+    apiName: "posts", 
+    apiUrl: "https://dummyjson.com/posts",
+  }, 
+  {
+    apiName: "comments", 
+    apiUrl: "https://dummyjson.com/comments",
+  }
+]
 
+const executeInParallelWithPromises = async (apis) => {
+  const promises = apis.map(async (api) => {
+    try {
+      const response = await fetch(api.apiUrl);
+      const data = await response.json();
+      return {
+        apiName: api.apiName,
+        apiUrl: api.apiUrl,
+        apiData:data
+      };
+    } catch (error) {
+      return {
+        apiName: api.apiName,
+        apiUrl: api.apiUrl,
+        
+      };
+    }
+  });
+
+  const results = await Promise.all(promises);
+  return results;
+}
+executeInParallelWithPromises(apis)
+  .then((results) => {
+    console.log(results);
+  })
+  .catch((error) => {
+    console.error("An error occurred:", error);
+  });
 ```
 ************************************************************************************************
 ### 3) [Question 3:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%203/tasks.md)
