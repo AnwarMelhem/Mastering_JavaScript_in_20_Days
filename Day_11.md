@@ -1,230 +1,28 @@
 
-# Day 9: JavaScript: The Hard Parts, v2
+# Day 11: JavaScript: Deep Javascript foundations, V3
 
-## Asynchronous JavaScript
-
-### JavaScript is:
-- Single threaded (one command runs at a time)
-- Synchronously executed (each line is run in order the code appears)
-
-### Synchronous Programming
-Synchronous programming is where the computer will complete one task before moving on to the next. This makes it easy to understand and predict what the computer will do at any given time.
-
-### Asynchronous programming
-Asynchronous programming in JavaScript allows you to perform non-blocking operations and handle tasks that may take some time to complete, such as fetching data from a server or reading a file. It ensures that your program doesn't get blocked while waiting for these operations to finish. There are several ways to achieve asynchronous programming in JavaScript, including callback functions, promises, and the newer async/await syntax.
-
-### setTimeout is a built in function - its first argument is the function to delay followed by ms to delay by
-
-core JavaScript engine has 3 main parts:
-- Thread of execution
-- Memory/variable environment
-- Call stack
-We need to add some new components:
-- Web Browser APIs/Node background APIs->This is where the actual functionality for built-in functions like setTimeout() and fetch() are located.
-- Promises
-- Event loop, Callback/Task queue and micro task queue 
-
- ![image](https://github.com/AnwarMelhem/Mastering_JavaScript_in_20_Days/assets/97465642/9562a561-83bc-4a98-bd34-1af674ba8273)
-
-We have rules for the execution of our asynchronously delayed code
-Hold promise-deferred functions in a microtask queue and 
-callback function in a task queue (Callback queue) 
-when the Web Browser Feature (API) finishes add the function to the Call stack (i.e. run the function) when:
-- Call stack is empty & all global code run (Have the Event Loop check this condition)
-### Prioritize functions in the microtask queue over the Callback queue
-
-### Call stack
-A call stack is a mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its place in a script that calls multiple functions — what function is currently being run and what functions are called from within that function, etc.
-
-When a script calls a function, the interpreter adds it to the call stack and then starts carrying out the function.
-Any functions that are called by that function are added to the call stack further up, and run where their calls are reached.
-When the current function is finished, the interpreter takes it off the stack and resumes execution where it left off in the last code listing.
-If the stack takes up more space than it was assigned, a "stack overflow" error is thrown.
-
-### Promise 
-The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
-
-A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
-
-A Promise is in one of these states:
-- pending: initial state, neither fulfilled nor rejected.
-- fulfilled: meaning that the operation was completed successfully.
-- rejected: meaning that the operation failed.
-*********************************************************************************************************************
-## Coding Exercises
-### 1) [Question 1:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%203/tasks.md)
-You are given a function executeInSequenceWithCBs and some code. The task is to modify the executeInSequenceWithCBs function so that it runs and executes all the tasks inside the asyncTasks array.
-
-The function should return an array of messages obtained from each task's execution.
-
-You are only allowed to change the executeInSequenceWithCBs function or add new functions/code. You cannot modify the tasks' functions.
-```javascript
-
-const task1 = (cb) => setTimeout(() => {
-  const message = "Task 1 has executed successfully!";
-  cb(message);
-}, 3000)
-
-const task2 = (cb) => setTimeout(() => {
-  const message = "Task 2 has executed successfully!";
-  cb(message);
-}, 0)
-
-const task3 = (cb) => setTimeout(() => {
-  const message = "Task 3 has executed successfully!";
-  cb(message);
-}, 1000)
-
-const task4 = (cb) => setTimeout(() => {
-  const message = "Task 4 has executed successfully!";
-  cb(message);
-}, 2000)
-
-const task5 = (cb) => setTimeout(() => {
-  const message = "Task 5 has executed successfully!";
-  cb(message);
-}, 4000)
-
-const asyncTasks = [task1, task2, task3, task4, task5];
-
-const executeInSequenceWithCBs = async(tasks, callback) => {
-  const results = [];
-
-  await Promise.all(tasks.map((task) => new Promise(resolve => {
-    task(message => {
-      results.push(message);
-      resolve();
-    });
-  })));
-
-  callback(results);
-}
-
-console.log(executeInSequenceWithCBs(asyncTasks,(result)=>{console.log(result,"ans from callback")}));
-```
-***********************************************************************************************
-### 2) [Question 2:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
-
-You are given a function called executeInParallelWithPromises, which takes an array of APIs (represented by objects).
-
-Your task is to write code that fetches the data of each API in parallel using promises. In Parallel means that the api which resolves first, returns its value first, regardless of the execution order.
-
-The output of the executeInParallelWithPromises function should be an array containing the results of each API's execution.
-
-Each result should be an object with three keys: apiName, apiUrl, and apiData..
-```javascript
-const apis = [
-  {
-    apiName: "products", 
-    apiUrl: "https://dummyjson.com/products",
-  }, 
-  {
-    apiName: "users", 
-    apiUrl: "https://dummyjson.com/users",
-  }, 
-  {
-    apiName: "posts", 
-    apiUrl: "https://dummyjson.com/posts",
-  }, 
-  {
-    apiName: "comments", 
-    apiUrl: "https://dummyjson.com/comments",
-  }
-]
-
-const executeInParallelWithPromises = async (apis) => {
-  const promises = apis.map(async (api) => {
-    try {
-      const response = await fetch(api.apiUrl);
-      const data = await response.json();
-      return {
-        apiName: api.apiName,
-        apiUrl: api.apiUrl,
-        apiData:data
-      };
-    } catch (error) {
-      return {
-        apiName: api.apiName,
-        apiUrl: api.apiUrl,
-        
-      };
-    }
-  });
-
-  const results = await Promise.all(promises);
-  return results;
-}
-executeInParallelWithPromises(apis)
-  .then((results) => {
-    console.log(results);
-  })
-  .catch((error) => {
-    console.error("An error occurred:", error);
-  });
-```
-************************************************************************************************
-### 3) [Question 3:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%203/tasks.md)
-You are given a function called executeInSequenceWithPromises, which takes an array of APIs (represented by objects).
-
-Your task is to write code that fetches the data of each API sequentially (one after the other) using promises.
-
-In Sequence means that the api which executes first, returns its value first.
-
-The output of the executeInSequenceWithPromises function should be an array containing the results of each API's execution.
-
-Each result should be an object with three keys: apiName, apiUrl, and apiData.
+### Introduction
+Whenever there's a divergence
+between what your brain thinks
+is happening, and what the
+computer does, that's where
+bugs enter the code.
 
 ```javascript
-const apis = [
-  {
-    apiName: "products",
-    apiUrl: "https://dummyjson.com/products",
-  },
-  {
-    apiName: "users",
-    apiUrl: "https://dummyjson.com/users",
-  },
-  {
-    apiName: "posts",
-    apiUrl: "https://dummyjson.com/posts",
-  },
-  {
-    apiName: "comments",
-    apiUrl: "https://dummyjson.com/comments",
-  },
-];
-onst executeInSequenceWithPromises = async (apis) => {
-  const results = [];
+// ex
+let x = 2;
+++x;  // 3
+// this means 
+x = x +1
 
-  for (const api of apis) {
-    try {
-      const response = await fetch(api.apiUrl);
-      const data = await response.json();
-      results.push({
-        apiName: api.apiName,
-        apiUrl: api.apiUrl,
-        apiData: data,
-      });
-    } catch (error) {
-      results.push({
-        apiName: api.apiName,
-        apiUrl: api.apiUrl,
-        apiData: null, // Or handle the error in a way you prefer
-      });
-    }
-  }
-
-  return results;
-};
-
-
-
-executeInSequenceWithPromises(apis)
-  .then((results) => {
-    console.log(results);
-  })
-  .catch((error) => {
-    console.error("An error occurred:", error);
-  });
+let x = "2"
+++x; // shoudl be 21
+// but it's 3 beacuse JS is written like this
 ```
+
+
+
+
+
+
 
