@@ -1,5 +1,5 @@
 
-# Day 11: JavaScript: Deep Javascript foundations, V3
+# Day 12: JavaScript: Deep Javascript foundations, V3
 
 ## Equality  == vs. ===
 
@@ -44,5 +44,22 @@ Otherwise, fall back to ===
 
 
 ## Static Typing
+Benefits: 
+Catch type-related mistakes
+Communicate type intent
+Provide IDE feedback
+validating operand types to avoid errors
+
+### TypeScript vs Flow 
+### **[TypeScript vs Flow](https://github.com/niieani/typescript-vs-flowtype)**
 
 
+Pros and Cons:
+Familiarity: they look like other language's type systems
+Extremely popular these days
+They're very sophisticated and good at what they do
+They use "non-JS-standard" syntax (or code comments)
+They require* a build process, which raises the barrier to entry
+Their sophistication can be intimidating to those without prior formal types experience
+They focus more on "static types" (variables, parameters, returns, properties, etc) than value types
+The only way to have confidence over the runtime behavior is to limit/eliminate dynamic typing
