@@ -1,4 +1,4 @@
-# Day 12: JavaScript: Deep Javascript foundations, V3
+# Day 13: JavaScript: Deep Javascript foundations, V3
 ## Scope
 ###  Scope:where to look for thing
 for things
