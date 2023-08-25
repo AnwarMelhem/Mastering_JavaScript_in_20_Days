@@ -65,7 +65,7 @@ fun2() //ReferenceError
 **************************************************************************************
 **************************************************************************************
 
-
+## Coding Exercises
 ### QUESTION #1
 
 Create a function called `arrowHOF` that takes an arrow function as input and
@@ -104,6 +104,19 @@ console.log(hofNormalFunc3("Meow")()); // logs "Meow Meow Meow!" once
 
 ```
 
+## My Solution:
+```javascript
+const arrowHOF = (normalFunc) => {
+  return (...args) => {
+    return (times) => {
+      for (let i = 0; i < times; i++) {
+        console.log(normalFunc(...args));
+      }
+    };
+  };
+};
+
+```
 -------------------------------------------------------------------
 
 ### QUESTION #2
@@ -134,7 +147,14 @@ const preservedGreet = preserveThis(obj.greet);
 preservedGreet('Hello'); // Output: "Hello, John!"
 
 ```
-
+## My Solution:
+```javascript
+const preserveThis = (func) => {
+  return function (...args) {
+    return func.apply(this, args);
+  };
+};
+```
 -------------------------------------------------------------------
 
 ### QUESTION #3
@@ -159,7 +179,7 @@ outer1(); // Output: 10
 ```
 
 > **Reasoning for example 1's output:**  
-> .................................................................................
+> when the outer1 function is called, it defines a variable x with a value of 10. Then, it defines an inner1 function that tries to log the value of x. Since the inner1 function is defined within the same scope as the x variable, it has access to the x variable and logs its value, which is 10. When inner1() is invoked, it outputs 10 to the console.
 
 
 
@@ -181,4 +201,4 @@ outer2(); // Output: 20
 ```
 
 > **Reasoning for example 2's output:**  
-> .................................................................................
+> when the outer2 function is called, it defines a variable x with a value of 10. Then, it defines an inner2 function that defines a new variable x with a value of 20 within its own scope. When the inner2 function is invoked, it logs the value of the inner x variable, which is 20, because it's the one that's accessible within the function's scope. Therefore, when inner2() is invoked, it outputs 20 to the console.
