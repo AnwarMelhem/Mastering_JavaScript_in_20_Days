@@ -130,7 +130,7 @@ var t = "1"
 // but should print 1, beacuse it's in the outer scope, 
 ```
 
-<br>
+
 ### QUESTION #1
 
 Given the following code snippet and **explain what's happening**.
@@ -152,7 +152,29 @@ The output should be:
 
 Without changing anything in the for loop's code itself, provide a solution to
 fix it.
+## soluation:
 
+The setTimeout function is asynchronous, and by the time the callbacks inside setTimeout are executed, the loop has already finished executing, and the variable i has reached its final value of 5. This is why you're seeing "value of [i] is: 5" five times.
+To fix this issue without changing the for loop's code itself, you can create a new scope for each iteration of the loop using an immediately-invoked function expression (IIFE) or by using let instead of var to declare the loop variable. Here's the solution using let:
+```javascript
+for (let i = 0; i < 5; i++) {
+    setTimeout(function() {
+        console.log("value of [i] is: ", i);
+    }, 100);
+}
+
+```
+```javascript
+for (var i = 0; i < 5; i++) {
+    (function(index) {
+        setTimeout(function() {
+            console.log("value of [i] is: ", index);
+        }, 100);
+    })(i);
+}
+
+
+```
 -------------------------------------------------------------------
 
 ### QUESTION #2
@@ -178,6 +200,18 @@ The output should be: "Current array is: [0, 1, 2, 3, 4]".
 
 Provide a solution to fix it. 
 
+### Soluation:
+ because you're reinitializing the array variable inside each iteration of the loop, causing it to have only one element corresponding to the current value of i. To achieve the desired output of having all values [0, 1, 2, 3, 4] in the array, you need to declare the array variable outside the loop scope
+``` javascript
+let array = [];
+
+for (let i = 0; i < 5; i++) {
+   array.push(i);
+}
+
+console.log("Current array is: ", array);
+
+```
 -------------------------------------------------------------------
 
 ### QUESTION #3
@@ -209,3 +243,21 @@ The output should be:
 "Current value of i is: 3" "Current value of i is: 4"
 
 Provide a solution to fix it. 
+### soluation
+The arrow function inside the loop captures the reference to the variable i, and by the time the functions inside the functions array are executed, the loop has finished, and the value of i is 5.
+
+To fix this issue, you need to capture the current value of i during each iteration of the loop. You can achieve this by using an IIFE to create a new scope for each iteration.
+``` javascript
+let functions = [];
+
+for (var i = 0; i < 5; i++) {
+  functions.push((function(index) {
+    return function() {
+      console.log("Current value of i is:", index);
+    };
+  })(i));
+}
+
+functions.forEach((func) => func());
+
+```
