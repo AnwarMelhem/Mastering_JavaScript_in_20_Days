@@ -49,22 +49,6 @@ myNewFunction();
 Write a closure named createCounter that takes an initial value start and returns a function. The returned function, when invoked, should increment the counter by 1 and return the updated value.
 
 ```javascript
-const squareList = arr => {
-  const arr1= arr.filter(num => num > 0 && num % parseInt(num) === 0)
-          .map(num => Math.pow(num, 2));
-  return arr1
-
-};
-
-const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
-console.log(squaredIntegers);
-```
-***********************************************************************************************
-### 2) [Question 2:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
-Write a closure named calculateAverage that takes an array of numbers, nums, and returns a function. The returned function, when invoked, should calculate and return the average of the numbers in the array.
-
-```javascript
-function calculateAverage(ArrayOfNumber){
 function createCounter(start) {
   let counter = start;
 
@@ -83,6 +67,30 @@ console.log(counter1()); // Output: 2
 const counter2 = createCounter(5);
 console.log(counter2()); // Output: 6
 console.log(counter2()); // Output: 7
+```
+***********************************************************************************************
+### 2) [Question 2:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
+Write a closure named calculateAverage that takes an array of numbers, nums, and returns a function. The returned function, when invoked, should calculate and return the average of the numbers in the array.
+
+```javascript
+function calculateAverage (nums) {
+    let sum=0;
+    
+  function avg() {
+    for(let n of nums){
+        sum += n;    
+    }
+    return sum/nums.length;
+  }
+
+  return avg;
+}
+
+const avgFunc = calculateAverage([5, 10, 15, 20]);
+console.log(avgFunc()); // Output: 12.5
+
+const anotherAvgFunc = calculateAverage([2, 4, 6]);
+console.log(anotherAvgFunc()); // Output: 4
 ```
 ************************************************************************************************
 ### 3) [Question 3:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
