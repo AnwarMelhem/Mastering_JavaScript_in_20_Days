@@ -106,15 +106,7 @@ console.log(hofNormalFunc3("Meow")()); // logs "Meow Meow Meow!" once
 
 ## My Solution:
 ```javascript
-const arrowHOF = (normalFunc) => {
-  return (...args) => {
-    return (times) => {
-      for (let i = 0; i < times; i++) {
-        console.log(normalFunc(...args));
-      }
-    };
-  };
-};
+
 
 ```
 -------------------------------------------------------------------
@@ -149,11 +141,7 @@ preservedGreet('Hello'); // Output: "Hello, John!"
 ```
 ## My Solution:
 ```javascript
-const preserveThis = (func) => {
-  return function (...args) {
-    return func.apply(this, args);
-  };
-};
+
 ```
 -------------------------------------------------------------------
 
