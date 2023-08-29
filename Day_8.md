@@ -65,20 +65,24 @@ Write a closure named calculateAverage that takes an array of numbers, nums, and
 
 ```javascript
 function calculateAverage(ArrayOfNumber){
-   
-  function innerAverage (){ 
-    let sum =0
-    for(let i=0;i<ArrayOfNumber.length;i++){
-      sum=sum+ArrayOfNumber[i];
-    }
-    let result=sum/ArrayOfNumber.length;
-    return result;
-   }
-  return innerAverage;
- }
- const myNewFunction = calculateAverage([1,2,3,4,5,6,7,8,9,10]);
- const result=myNewFunction();
- console.log(result);
+function createCounter(start) {
+  let counter = start;
+
+  function increment() {
+    counter++;
+    return counter;
+  }
+
+  return increment;
+}
+
+const counter1 = createCounter(0);
+console.log(counter1()); // Output: 1
+console.log(counter1()); // Output: 2
+
+const counter2 = createCounter(5);
+console.log(counter2()); // Output: 6
+console.log(counter2()); // Output: 7
 ```
 ************************************************************************************************
 ### 3) [Question 3:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
