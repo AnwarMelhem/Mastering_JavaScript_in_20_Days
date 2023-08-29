@@ -74,26 +74,24 @@ Write a closure named calculateAverage that takes an array of numbers, nums, and
 
 ```javascript
 function calculateAverage(nums) {
-  return function() {
-    if (nums.length === 0) {
-      return 0; // Handle the case when the array is empty to avoid division by zero
-    }
-
+   function avg() {
     let sum = 0;
+    let avg1=0;
     for (let i = 0; i < nums.length; i++) {
       sum += nums[i];
     }
-    
-    return sum / nums.length;
+    avg1= sum / nums.length;
+    console.log(avg1)
   };
+  return avg;
 }
+
 
 // Example usage:
 const numbers = [2, 4, 6, 8, 10];
 const averageCalculator = calculateAverage(numbers);
-const average = averageCalculator();
+console.log(averageCalculator());
 
-console.log(`Average: ${average}`);
 
 ```
 ************************************************************************************************
