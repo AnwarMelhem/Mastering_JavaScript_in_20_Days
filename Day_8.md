@@ -73,24 +73,28 @@ console.log(counter2()); // Output: 7
 Write a closure named calculateAverage that takes an array of numbers, nums, and returns a function. The returned function, when invoked, should calculate and return the average of the numbers in the array.
 
 ```javascript
-function calculateAverage (nums) {
-    let sum=0;
-    
-  function avg() {
-    for(let n of nums){
-        sum += n;    
+function calculateAverage(nums) {
+  return function() {
+    if (nums.length === 0) {
+      return 0; // Handle the case when the array is empty to avoid division by zero
     }
-    return sum/nums.length;
-  }
 
-  return avg;
+    let sum = 0;
+    for (let i = 0; i < nums.length; i++) {
+      sum += nums[i];
+    }
+    
+    return sum / nums.length;
+  };
 }
 
-const avgFunc = calculateAverage([5, 10, 15, 20]);
-console.log(avgFunc()); // Output: 12.5
+// Example usage:
+const numbers = [2, 4, 6, 8, 10];
+const averageCalculator = calculateAverage(numbers);
+const average = averageCalculator();
 
-const anotherAvgFunc = calculateAverage([2, 4, 6]);
-console.log(anotherAvgFunc()); // Output: 4
+console.log(`Average: ${average}`);
+
 ```
 ************************************************************************************************
 ### 3) [Question 3:](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week2%20-%20javaScript-the-hard-parts-v2/day%202/tasks.md)
